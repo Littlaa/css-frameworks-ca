@@ -2,6 +2,8 @@
 
 Social media application
 
-# npm install
+# Goal
 
-# npm watch
+To apply knowledge of Bootstrap and SASS to build a responsive front end for a social media application.
+
+## Brief
