@@ -16,7 +16,6 @@ export async function register(profile) {
   });
 
   const result = await response.json();
-  console.log(result);
+  alert("You are now registered");
+  return result;
 }
-
-// 50 min https://www.youtube.com/watch?v=rLAGHFr8bvU
