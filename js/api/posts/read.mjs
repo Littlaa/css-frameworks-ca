@@ -1,7 +1,7 @@
-export async function readPosts() {
+export async function getPosts() {
   //
 }
 
-export async function readPost(id) {
+export async function getPost(id) {
   //
 }
