@@ -1,6 +1,5 @@
 import { setRegisterFormListener } from "./handlers/register.mjs";
 import { setLoginFormListener } from "./handlers/login.mjs";
-import * as post from "./api/posts/index.mjs";
 
 const path = location.pathname;
 
@@ -9,11 +8,3 @@ if (path === "/login.html") {
 } else if (path === "/register.html") {
   setRegisterFormListener();
 }
-
-// post.createPost();
-// post.updatePost();
-// post.removePost();
-// post.getPost();
-// post.getPosts().then(console.log);
-
-post.getPost(5827).then(console.log);
