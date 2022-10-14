@@ -59,21 +59,35 @@
       </div>
       <div class="container mt-5">
         <div class="row">
-          <h2>
-            Posts |2|
-            <div class="pull-right"><a href="#" id="addacomment" class="btn btn-primary mt-3">Add a post</a></div>
-          </h2>
+          <div class="pull-right col"><a href="#" id="addacomment" class="btn btn-primary mt-3">Edit Post</a></div>
         </div>
         <div class="row" id="addcomment" style="display: none">
-          <form>
-            <textarea class="form-control" placeholder="Comment content..."></textarea><br />
-            <button class="btn btn-primary">Send</button>
+          <form id="editPost">
+            <div class="d-flex flex-column mb-4 m-lg-3">
+              <div class="form-outline flex-fill mb-0 row">
+                <label class="form-label custom_padding">Title</label>
+                <input type="text" name="title" required class="form-control" />
+              </div>
+              <div class="form-outline flex-fill mb-0 row">
+                <label class="custom_padding">Body</label>
+                <textarea class="form-control" name="body" required></textarea>
+              </div>
+              <div class="form-outline flex-fill mb-0 row">
+                <label class="form-label custom_padding">Tags</label>
+                <input type="text" name="tags" class="form-control" />
+              </div>
+              <div class="form-outline flex-fill mb-0 row">
+                <label class="form-label custom_padding">Media</label>
+                <input type="url" name="media" class="form-control" />
+              </div>
+            </div>
+            <button class="btn btn-primary btn-success">Update Post</button>
           </form>
         </div>
         <hr />
         <div class="row comment">
           <div class="head"></div>
-          <p></p>
+          <p>Post her</p>
         </div>
         <hr />
       </div>

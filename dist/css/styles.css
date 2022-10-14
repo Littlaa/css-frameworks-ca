@@ -10768,4 +10768,12 @@ hr {
   background-position: center;
 }
 
+.custom_padding {
+  padding: 0;
+}
+
+.post {
+  color: red;
+}
+
 /*# sourceMappingURL=styles.css.map */
