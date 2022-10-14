@@ -10773,7 +10773,11 @@ hr {
 }
 
 .post {
-  color: red;
+  margin-bottom: 35px;
+}
+
+.post img {
+  width: 50%;
 }
 
 /*# sourceMappingURL=styles.css.map */
