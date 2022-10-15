@@ -1,10 +1,13 @@
 export function postTemplate(postData) {
   const post = document.createElement("div");
+  const id = document.createElement("h7");
   const title = document.createElement("h3");
   const body = document.createElement("body");
+  post.append(id);
   post.append(title);
   post.append(body);
   post.classList.add("post");
+  id.innerText = `Id = ${postData.id}`;
   title.innerText = postData.title;
   body.innerText = postData.body;
 
