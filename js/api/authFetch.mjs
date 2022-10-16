@@ -1,5 +1,9 @@
 import { load } from "../storage/index.mjs";
 
+/**
+ * Loads the token
+ */
+
 export function headers() {
   const token = load("token");
 

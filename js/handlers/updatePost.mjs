@@ -1,5 +1,9 @@
 import { getPost, updatePost } from "../api/posts/index.mjs";
 
+/**
+ * Lets user update a post
+ */
+
 export async function setUpdatePostListener() {
   const form = document.querySelector("#editPost");
 
@@ -25,6 +29,7 @@ export async function setUpdatePostListener() {
       post.id = id;
 
       updatePost(post);
+      alert("Post was updated");
     });
   }
 }

@@ -4,6 +4,10 @@ import { authFetch } from "../authFetch.mjs";
 
 const action = "/posts";
 
+/**
+ * Lets user read a list of posts
+ */
+
 export async function getPosts() {
   const getPostsURL = `${API_SOCIAL_URL}${action}`;
 
@@ -11,6 +15,10 @@ export async function getPosts() {
 
   return await response.json();
 }
+
+/**
+ * Lets user read a single post
+ */
 
 export async function getPost(id) {
   if (!id) {

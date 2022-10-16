@@ -1,5 +1,9 @@
 import { createPost } from "../api/posts/index.mjs";
 
+/**
+ * Lets user create a post
+ */
+
 export function setCreatePostFormListener() {
   const form = document.querySelector("#createPost");
 
@@ -12,6 +16,7 @@ export function setCreatePostFormListener() {
       const post = Object.fromEntries(formData.entries());
 
       createPost(post);
+      alert("Post was created");
     });
   }
 }

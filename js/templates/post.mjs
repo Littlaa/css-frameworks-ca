@@ -1,3 +1,7 @@
+/**
+ * Templates for getting all posts and a single post
+ */
+
 export function postTemplate(postData) {
   const post = document.createElement("div");
   const id = document.createElement("h7");
