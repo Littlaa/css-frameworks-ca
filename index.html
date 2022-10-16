@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script src="./js/index.mjs" defer type="module"></script>
+    <script src="./js/getAllPosts.mjs" defer type="module"></script>
     <title>BeSocial | Home</title>
   </head>
   <body>
@@ -49,69 +51,32 @@
         <h2 class="text-center fw-normal text-muted">Please leave a post ^^</h2>
       </div>
       <div class="container mt-5">
-        <div class="row">
-          <h2>
-            Posts |4|
-            <div class="pull-right">
-              <a href="#" id="addacomment" class="btn btn-primary mt-3">Add a post</a>
+        <form id="createPost">
+          <div class="d-flex flex-column mb-4 m-lg-3">
+            <div class="form-outline flex-fill mb-0 row">
+              <label class="form-label custom_padding">Title</label>
+              <input type="text" name="title" required class="form-control" />
             </div>
-          </h2>
-        </div>
-        <div class="row" id="addcomment" style="display: none">
-          <form>
-            <textarea class="form-control" placeholder="Comment content..."></textarea><br />
-            <button class="btn btn-primary">Send</button>
-          </form>
-        </div>
+            <div class="form-outline flex-fill mb-0 row">
+              <label class="custom_padding">Body</label>
+              <textarea class="form-control" name="body" required></textarea>
+            </div>
+            <!-- <div class="form-outline flex-fill mb-0 row">
+                <label class="form-label custom_padding">Tags</label>
+                <input type="text" name="tags" class="form-control" />
+              </div>
+              <div class="form-outline flex-fill mb-0 row">
+                <label class="form-label custom_padding">Media</label>
+                <input type="url" name="media" class="form-control" />
+              </div> -->
+          </div>
+          <button class="btn btn-primary btn-success">Create Post</button>
+        </form>
+
         <hr />
         <div class="row comment">
-          <div class="head">
-            <small><strong class="user">Diablo</strong> 01.09.2022 12:13</small>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non lorem elementum, accumsan magna sed,
-            faucibus mauris. Nulla pellentesque ante nibh, ac hendrerit ante fermentum sed. Nunc in libero dictum, porta
-            nibh pellentesque, ultrices dolor. Curabitur nunc ipsum, blandit vel aliquam id, aliquam vel velit.
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sit amet mi
-            dignissim, pretium justo non, lacinia libero. Nulla facilisi. Donec id sem velit.
-          </p>
-        </div>
-        <div class="row comment">
-          <div class="head">
-            <small><strong class="user">Giesche</strong> 25.08.2022 10:30</small>
-          </div>
-          <p>
-            Praesent molestie ante nec metus convallis aliquam. Ut aliquam tincidunt mollis. Maecenas et ex sit amet est
-            vehicula ultrices sed sit amet elit. Suspendisse potenti. Aenean et quam ut purus convallis porttitor.
-            Mauris porttitor pretium elementum. Duis blandit elit tincidunt ipsum ultricies, ut faucibus lorem
-            facilisis. Proin ipsum turpis, pharetra in lorem ac, porta ullamcorper velit. Proin gravida odio eget elit
-            ultricies sodales. Vivamus vel tincidunt ligula. Proin pulvinar pellentesque velit eget luctus. Aliquam
-            vitae enim ut purus vestibulum sollicitudin sit amet eget lacus. Nunc tempus fringilla tincidunt.
-          </p>
-        </div>
-        <div class="row comment">
-          <div class="head">
-            <small><strong class="user">John</strong> 15.08.2022 20:13</small>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non lorem elementum, accumsan magna sed,
-            faucibus mauris. Nulla pellentesque ante nibh, ac hendrerit ante fermentum sed. Nunc in libero dictum, porta
-            nibh pellentesque, ultrices dolor. Curabitur nunc ipsum, blandit vel aliquam id, aliquam vel velit.
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sit amet mi
-            dignissim, pretium justo non, lacinia libero. Nulla facilisi. Donec id sem velit.
-          </p>
-        </div>
-        <div class="row comment">
-          <div class="head">
-            <small><strong class="user">Susan</strong> 12.08.2022 08:26</small>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non lorem elementum, accumsan magna sed,
-            faucibus mauris. Nulla pellentesque ante nibh, ac hendrerit ante fermentum sed. Nunc in libero dictum, porta
-            nibh pellentesque, ultrices dolor. Curabitur nunc ipsum, blandit vel aliquam id, aliquam vel velit.
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sit amet mi
-            dignissim, pretium justo non, lacinia libero. Nulla facilisi. Donec id sem velit.
-          </p>
+          <div class="head"></div>
+          <div id="posts"></div>
         </div>
         <hr />
       </div>
@@ -124,8 +89,6 @@
         <li class="list-inline-item"><a href="#">Support</a></li>
       </ul>
     </footer>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/post.js"></script>
   </body>
 </html>

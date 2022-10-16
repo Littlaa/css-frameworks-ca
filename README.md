@@ -2,40 +2,33 @@
 
 Social media application
 
-# Goal
+## Trello board
 
-To apply knowledge of Bootstrap and SASS to build a responsive front end for a social media application.
+https://trello.com/b/GvCAz0Ro/social-media-app
 
 ## Brief
 
-You are tasked with creating 3 pages in HTML using Bootstrap and SASS:
+You have been tasked with producing a new JavaScript front-end client for an existing social media platform. The client application must be attractive and responsive, but you have an otherwise blank slate in terms of theme design language.
 
-- Homepage
-- Profile page
-- Login page
+Using the provided API and API documentation, create a functioning user interface that allows for viewing, posting, editing and deleting social media content.
 
-The Homepage should have a feed of posts from the user’s contacts, a search bar, and a form to create a new post.
+Social API routes require authorization via JWT (JSON Web Tokens). You will need to register an account and log in to access your token.
 
-The profile page should have a profile image, details about the user, a list of the user’s contacts, their posts and a form to post to their wall.
+To complete the required features, you will also need to make use of GET, POST, PUT, and DELETE HTTP methods.
 
-The login page should have a form to login to the application. Make sure to include HTML form validation and use /profile as the action attribute.
+Using localStorage is highly recommended, especially for storing JWT tokens.
 
-You will only be working on the visuals for this project at this stage, forms do not need to submit data, for example.
+A finished project fulfills the requirements below with an easy-to-use and error-free user interface.
+Required features
 
-Submission for this project will follow the pattern used in professional development. You are required to seek feedback from your peers as well as the teachers in order to complete this assignment.
+The following user stories are required for a passing submission:
 
-## Process
-
-1. Create a design or wireframe for each page
-2. Create a new public repository on GitHub
-3. Create a new project folder for this repository
-4. Create a new git branch for this project
-5. Create a package.json file
-6. Install Bootstrap, SASS and Live Server
-7. Configure NPM scripts in package.json
-8. Implement your design using Bootstrap and SASS overrides
-9. Create a Pull Request to merge your changes to the main branch
-10. Share this Pull Request and request peer review
-11. Discuss and implement the feedback gathered from peer review
-12. Share this Pull Request with a teacher for their approval
-13. Complete the approved Pull Request, or implement the required changes
+- [x] User with @noroff.no or @stud.noroff.no email can register profile
+- [x] Registered user can login
+- [x] User can view a post content feed
+- [ ] User can filter the post content feed
+- [ ] User can search the post content feed
+- [x] User can view a post content item by ID
+- [x] User can create a post content item
+- [x] User can update a post content item
+- [ ] User can delete a post content item

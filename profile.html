@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script src="./js/index.mjs" defer type="module"></script>
+    <script src="./js/getSinglePost.mjs" defer type="module"></script>
     <title>BeSocial | Profile</title>
   </head>
   <body>
@@ -58,43 +60,35 @@
         </div>
       </div>
       <div class="container mt-5">
-        <div class="row">
-          <h2>
-            Posts |2|
-            <div class="pull-right"><a href="#" id="addacomment" class="btn btn-primary mt-3">Add a post</a></div>
-          </h2>
-        </div>
-        <div class="row" id="addcomment" style="display: none">
-          <form>
-            <textarea class="form-control" placeholder="Comment content..."></textarea><br />
-            <button class="btn btn-primary">Send</button>
-          </form>
-        </div>
+        <h1>Edit Post</h1>
+        <form id="editPost">
+          <div class="d-flex flex-column mb-4 m-lg-3">
+            <div class="form-outline flex-fill mb-0 row">
+              <label class="form-label custom_padding">Title</label>
+              <input type="text" name="title" required class="form-control" />
+            </div>
+            <div class="form-outline flex-fill mb-0 row">
+              <label class="custom_padding">Body</label>
+              <textarea class="form-control" name="body" required></textarea>
+            </div>
+            <!-- <div class="form-outline flex-fill mb-0 row">
+                <label class="form-label custom_padding">Tags</label>
+                <input type="text" name="tags" class="form-control" />
+              </div>
+              <div class="form-outline flex-fill mb-0 row">
+                <label class="form-label custom_padding">Media</label>
+                <input type="url" name="media" class="form-control" />
+              </div> -->
+          </div>
+          <button class="btn btn-primary btn-success">Update Post</button>
+        </form>
+
+        <button class="btn btn-primary btn-success" id="remove">Delete</button>
+
         <hr />
         <div class="row comment">
-          <div class="head">
-            <small><strong class="user">Mona</strong> 01.09.2022 20:10</small>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non lorem elementum, accumsan magna sed,
-            faucibus mauris. Nulla pellentesque ante nibh, ac hendrerit ante fermentum sed. Nunc in libero dictum, porta
-            nibh pellentesque, ultrices dolor. Curabitur nunc ipsum, blandit vel aliquam id, aliquam vel velit.
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sit amet mi
-            dignissim, pretium justo non, lacinia libero. Nulla facilisi. Donec id sem velit.
-          </p>
-        </div>
-        <div class="row comment">
-          <div class="head">
-            <small><strong class="user">Mona</strong> 20.08.2022 10:30</small>
-          </div>
-          <p>
-            Praesent molestie ante nec metus convallis aliquam. Ut aliquam tincidunt mollis. Maecenas et ex sit amet est
-            vehicula ultrices sed sit amet elit. Suspendisse potenti. Aenean et quam ut purus convallis porttitor.
-            Mauris porttitor pretium elementum. Duis blandit elit tincidunt ipsum ultricies, ut faucibus lorem
-            facilisis. Proin ipsum turpis, pharetra in lorem ac, porta ullamcorper velit. Proin gravida odio eget elit
-            ultricies sodales. Vivamus vel tincidunt ligula. Proin pulvinar pellentesque velit eget luctus. Aliquam
-            vitae enim ut purus vestibulum sollicitudin sit amet eget lacus. Nunc tempus fringilla tincidunt.
-          </p>
+          <div class="head"></div>
+          <div id="post"></div>
         </div>
         <hr />
       </div>
@@ -103,11 +97,10 @@
         <div class="row">
           <div class="col-sm-3">
             <div class="card h-100">
-              <img
-                src="/images/pexels-david-garrison-2128807.jpg"
-                class="card-img-top"
-                alt="Man with grey background"
-              />
+              <div
+                style="background-image: url(/images/pexels-david-garrison-2128807.jpg)"
+                class="w-100 friend_img"
+              ></div>
               <div class="card-body">
                 <h5 class="card-title">David Garrison</h5>
                 <a href="#" class="btn btn-primary">Profile</a>
@@ -116,7 +109,10 @@
           </div>
           <div class="col-sm-3">
             <div class="card h-100">
-              <img src="/images/pexels-justin-shaifer-1222271.jpg" class="card-img-top" alt="Man in green shirt" />
+              <div
+                style="background-image: url(/images/pexels-justin-shaifer-1222271.jpg)"
+                class="w-100 friend_img"
+              ></div>
               <div class="card-body">
                 <h5 class="card-title">Justin Shaifer</h5>
                 <a href="#" class="btn btn-primary">Profile</a>
@@ -125,7 +121,10 @@
           </div>
           <div class="col-sm-3">
             <div class="card h-100">
-              <img src="/images/pexels-spencer-selover-428364.jpg" class="card-img-top" alt="Man in profile" />
+              <div
+                style="background-image: url(/images/pexels-spencer-selover-428364.jpg)"
+                class="w-100 friend_img"
+              ></div>
               <div class="card-body">
                 <h5 class="card-title">Spencer Selover</h5>
                 <a href="#" class="btn btn-primary">Profile</a>
@@ -134,11 +133,7 @@
           </div>
           <div class="col-sm-3">
             <div class="card h-100">
-              <img
-                src="/images/pexels-simon-robben-614810.jpg"
-                class="card-img-top"
-                alt="Man with light grey background"
-              />
+              <div style="background-image: url(/images/pexels-simon-robben-614810.jpg)" class="w-100 friend_img"></div>
               <div class="card-body">
                 <h5 class="card-title">Simon Robben</h5>
                 <a href="#" class="btn btn-primary">Profile</a>
@@ -157,8 +152,6 @@
         <li class="list-inline-item"><a href="#">Support</a></li>
       </ul>
     </footer>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/post.js"></script>
   </body>
 </html>
