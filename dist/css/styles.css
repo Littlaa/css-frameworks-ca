@@ -10768,4 +10768,16 @@ hr {
   background-position: center;
 }
 
+.custom_padding {
+  padding: 0;
+}
+
+.post {
+  margin-bottom: 35px;
+}
+
+.post img {
+  width: 50%;
+}
+
 /*# sourceMappingURL=styles.css.map */
